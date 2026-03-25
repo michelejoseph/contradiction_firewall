@@ -1,0 +1,90 @@
+{
+  "version": "1.0",
+  "description": "Example constraint ledger for the Contradiction Firewall",
+  "rules": [
+    {
+      "rule_id": "refund_policy_001",
+      "statement": "Refunds are allowed only within 30 days of purchase",
+      "rule_type": "hard_constraint",
+      "priority": "critical",
+      "tags": ["refund", "policy", "commerce"],
+      "version": "1.0"
+    },
+    {
+      "rule_id": "refund_policy_002",
+      "statement": "Final sale items are not eligible for refunds under any circumstances",
+      "rule_type": "hard_constraint",
+      "priority": "critical",
+      "tags": ["refund", "final-sale", "commerce"],
+      "version": "1.0"
+    },
+    {
+      "rule_id": "refund_policy_eu_001",
+      "statement": "EU customers may withdraw from a purchase within 14 days without giving any reason",
+      "rule_type": "hard_constraint",
+      "priority": "critical",
+      "geo_scope": "EU",
+      "tags": ["refund", "eu", "consumer-rights"],
+      "version": "1.0"
+    },
+    {
+      "rule_id": "data_retention_001",
+      "statement": "User data is retained for a maximum of 90 days after account deletion",
+      "rule_type": "hard_constraint",
+      "priority": "critical",
+      "tags": ["privacy", "data-retention", "compliance"],
+      "version": "1.0"
+    },
+    {
+      "rule_id": "support_hours_001",
+      "statement": "Live support is available Monday through Friday 9am to 6pm EST",
+      "rule_type": "policy",
+      "priority": "high",
+      "tags": ["support", "hours"],
+      "version": "1.0"
+    },
+    {
+      "rule_id": "pricing_001",
+      "statement": "The free tier is limited to 100 API calls per day",
+      "rule_type": "hard_constraint",
+      "priority": "high",
+      "user_scope": "free tier",
+      "tags": ["pricing", "limits", "free"],
+      "version": "1.0"
+    },
+    {
+      "rule_id": "pricing_002",
+      "statement": "Enterprise customers have unlimited API calls",
+      "rule_type": "hard_constraint",
+      "priority": "high",
+      "user_scope": "enterprise",
+      "tags": ["pricing", "limits", "enterprise"],
+      "version": "1.0"
+    },
+    {
+      "rule_id": "feature_v2_001",
+      "statement": "The legacy v1 API is deprecated and will be removed after December 2025",
+      "rule_type": "policy",
+      "priority": "medium",
+      "time_scope": "after December 2025",
+      "tags": ["api", "versioning", "deprecation"],
+      "version": "1.0"
+    },
+    {
+      "rule_id": "security_001",
+      "statement": "Passwords must be at least 12 characters and include uppercase letters numbers and symbols",
+      "rule_type": "hard_constraint",
+      "priority": "critical",
+      "tags": ["security", "password", "authentication"],
+      "version": "1.0"
+    },
+    {
+      "rule_id": "content_policy_001",
+      "statement": "The assistant must never provide medical diagnoses or prescribe medications",
+      "rule_type": "hard_constraint",
+      "priority": "critical",
+      "tags": ["safety", "medical", "content-policy"],
+      "version": "1.0"
+    }
+  ]
+}
